@@ -1,35 +1,26 @@
 #include <iostream>
-#include <vector>
-
 using namespace std;
-
-
-
-namespace MySpace{
+class animal{
+public:    
+    string sound;
+    int age;
+    animal(const string& s =" ", int a = 0) : sound(s), age(a) {}
     void print(){
-        cout << "Hello"<<endl;
-    }   
-
-    class MyObj{
-        int a;
-    };
-}
-
-namespace MySpace2{
-    namespace Inner{
-        void f(){
-            cout << 'f'<<endl;
-        }
+        cout << sound;
     }
-    void print(){
-        cout << "Hello"<<endl;
-    }   
-}
-
-int main()
-{
-    MySpace::print();
-    MySpace::MyObj obj;
-    MySpace2::print();
-    MySpace2::Inner::f();
+};
+class lion:public animal{
+    public:
+        lion() : animal("rrrrr", 17) {};
+};
+class cow : public animal{
+    public:
+        cow() : animal("moo", 15) {};
+};
+int main() {
+  cow c1;
+    c1.print();
+    cout << endl;
+ lion c2;
+    c2.print();
 }
